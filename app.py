@@ -1,12 +1,21 @@
-from flask import Flask
+# from flask import Flask
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World and azure and from pipelines 2 '
+# app = Flask(__name__)
 
 
-if __name__ == '__main__':
-    app.run()
+# @app.route('/')
+# def hello_world():
+#     return 'Hello World and azure and from pipelines 2 '
+
+
+# if __name__ == '__main__':
+#     app.run()
+
+
+from application import app, db
+from application.models import User, Post
+
+
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Post': Post, 'Classrooms' : Classrooms, 'ClassSession' : ClassSession, 'Teacher' : Teacher}

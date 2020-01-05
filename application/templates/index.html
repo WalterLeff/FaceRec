@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+
+
+
+    <h3>Let's start by create a new session</h3>
+    <button onclick="window.location.href = '{{ url_for('createSession') }}'" type="button" class="btn btn-primary">New session</button>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+{% endblock %}

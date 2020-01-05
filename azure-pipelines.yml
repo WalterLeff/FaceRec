@@ -11,7 +11,7 @@ variables:
   azureServiceConnectionId: '89dd2507-b7d1-46d6-80f1-28f292a0109f'
   
   # Web app name
-  webAppName: 'FaceRecApp'
+  webAppName: 'FaceRec-App'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'

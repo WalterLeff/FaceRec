@@ -22,7 +22,6 @@ itsdangerous==1.1.0
 Jinja2==2.10.3
 Mako==1.1.0
 MarkupSafe==1.1.1
-migrate==0.3.8
 numpy==1.18.0
 opencv-contrib-python==4.1.2.30
 pathspec==0.7.0

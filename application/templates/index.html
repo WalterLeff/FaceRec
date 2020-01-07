@@ -4,11 +4,14 @@
 {% block app_content %}
     <h1>Hi, {{ current_user.username }}!</h1>
 
+    <h2>First time user ?</h2>
+    <h3>Let's create your dataset for training and recognising faces</h3>
+    <button onclick="window.location.href = '{{ url_for('createdataset') }}'" type="button" class="btn btn-primary">New session</button>
 
 
     <h3>Let's start by create a new session</h3>
     <button onclick="window.location.href = '{{ url_for('createSession') }}'" type="button" class="btn btn-primary">New session</button>
-    {% for post in posts %}
+    <!-- {% for post in posts %}
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    {% endfor %} -->
 {% endblock %}

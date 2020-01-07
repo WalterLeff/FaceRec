@@ -55,26 +55,28 @@ def logout():
 @app.route('/index')
 @login_required
 def index():
-    user = {'username' : 'Wouter'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
-
-
-    return render_template('api.html', title='API Page')
+    # user = {'username' : 'Wouter'}
+    # posts = [
+    #     {
+    #         'author': {'username': 'John'},
+    #         'body': 'Beautiful day in Portland!'
+    #     },
+    #     {
+    #         'author': {'username': 'Susan'},
+    #         'body': 'The Avengers movie was so cool!'
+    #     }
+    # ]
+    return render_template('index.html', title='Home')
+    
 
 @app.route('/createsession', methods=['GET', 'POST'])
 def createSession():
     form = CreateNewSessionForm()
     return render_template('createsession.html', title= 'Create new session', form = form)
+
+@app.route('/createdataset', methods=['GET', 'POST'])
+def createdataset():
+    return render_template('createdataset.html', title= 'Create datasets')
 
 @app.route('/dashboard')
 @login_required

@@ -1,6 +1,6 @@
 import os
 from os import environ
-import pyodbc
+#import pyodbc
 from sqlalchemy import create_engine
 import urllib
 

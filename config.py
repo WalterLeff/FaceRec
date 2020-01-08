@@ -1,5 +1,4 @@
 import os
-import pypyodbc
 from os import environ
 import pyodbc
 from sqlalchemy import create_engine

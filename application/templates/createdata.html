@@ -1,15 +1,9 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
 
 
 {% block content %}
     <h1>Hi, {{ current_user.username }}!</h1>
-    <h2>this is the FaceRec App page</h2>
-
-
-    <p>Hier kan je info vinden over deze app zonder te moeten ingelogd zijn.</p>
-
-    Wouter Lefebvre Howest
+    <h2>this is the create dataset page</h2>
 
     <title>Flask App</title>
     {{ dropzone.load() }}
@@ -19,6 +13,4 @@
     <h1>Hello from Flask!</h1>
     {{ dropzone.create(action_view='index') }}
 </body>
-
-    
 {% endblock %}

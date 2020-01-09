@@ -33,3 +33,7 @@ class RegistrationForm(FlaskForm):
 class CreateNewSessionForm(FlaskForm):
     teachersname = StringField('Teachers name', validators=[DataRequired])
     classroom = StringField('Classroom', validators=[DataRequired])
+
+class CreateDataset(FlaskForm):
+    Module = StringField('Module', validators=[DataRequired])
+    ClassName = StringField('Classname', validators=[DataRequired])

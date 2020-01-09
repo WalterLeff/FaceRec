@@ -1,4 +1,29 @@
-2020-01-09 12:21:13,263 ERROR: Exception on /index [GET] [in /Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py:1891]
+2020-01-05 18:32:34,547 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:34:12,439 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:34:41,485 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:35:00,294 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:35:33,559 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:35:45,082 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:35:57,138 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:36:52,352 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:37:02,364 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 18:37:30,015 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-05 19:34:07,328 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 13:45:29,480 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 18:53:21,825 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 18:53:37,586 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 18:59:20,060 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 18:59:52,403 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:00:26,291 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:01:02,928 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:01:43,844 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:01:47,529 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:02:26,274 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:02:48,042 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:03:15,219 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-06 19:03:31,702 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-07 19:50:14,782 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-07 19:53:12,864 ERROR: Exception on / [GET] [in /Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +39,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/routes.py", line 52, in index
-    return render_template('index.html', title='Home')
+  File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/routes.py", line 69, in index
+    return render_template('index.html', title='Home', posts=posts)
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
@@ -43,7 +68,7 @@ Traceback (most recent call last):
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/templates/base.html", line 48, in block "content"
     {% block app_content %}{% endblock %}
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/templates/index.html", line 9, in block "app_content"
-    <button onclick="window.location.href = '{{ url_for('createDataSet') }}'" type="button" class="btn btn-primary">New dataset</button>
+    <button onclick="window.location.href = '{{ url_for('createdataset') }}'" type="button" class="btn btn-primary">New session</button>
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
@@ -54,11 +79,9 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'createDataSet'. Did you mean 'createDataset' instead?
-2020-01-09 12:21:23,952 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:31]
-2020-01-09 19:31:02,843 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:31:32,228 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:32:01,447 ERROR: Exception on /uploadresults [GET] [in /Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py:1891]
+werkzeug.routing.BuildError: Could not build url for endpoint 'createdataset'. Did you mean 'createSession' instead?
+2020-01-07 19:53:53,392 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-07 19:53:55,068 ERROR: Exception on / [GET] [in /Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -72,32 +95,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/routes.py", line 102, in results
-    if "file_urls" not in session or session['file_urls'] == []:
-NameError: name 'session' is not defined
-2020-01-09 19:32:44,648 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:34:07,347 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:35:01,365 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:38:02,930 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:38:50,657 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 19:41:11,241 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 20:54:09,552 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:43]
-2020-01-09 20:58:50,479 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:03:18,813 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:04:15,941 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:08:55,592 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:10:04,358 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:11:13,698 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:12:36,525 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:13:12,245 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:34]
-2020-01-09 21:18:23,494 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:23:15,298 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:25:00,972 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:29:06,897 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:36:02,131 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:38:55,910 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:40:17,719 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:40:32,443 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:41:10,132 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:42:16,139 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
-2020-01-09 21:46:25,454 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:33]
+  File "/Users/wouterlefebvre/Github Repo's/FaceRec/FaceRecVenv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/wouterlefebvre/Github Repo's/FaceRec/application/routes.py", line 69, in index
+    return render_template('index.html', title='Home', posts=posts)
+NameError: name 'posts' is not defined
+2020-01-07 19:54:11,626 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]
+2020-01-07 20:03:56,333 INFO: website startup [in /Users/wouterlefebvre/Github Repo's/FaceRec/application/__init__.py:32]

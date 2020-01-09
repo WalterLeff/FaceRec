@@ -7,6 +7,7 @@ from logging.handlers import RotatingFileHandler
 import os
 from flask_bootstrap import Bootstrap
 import logging
+from flask_dropzone import Dropzone
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -15,6 +16,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
+dropzone = Dropzone(app)
 
 if not app.debug:
 

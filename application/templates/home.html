@@ -1,7 +1,11 @@
 {% extends "base.html" %}
-
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
     <h1>Hi, {{ current_user.username }}!</h1>
     <h2>this is the home page</h2>
+
+    <h2>Do you want to create a dataset ?</h2>
+    <h3>Let's create your dataset for training and recognising faces</h3>
+    <button onclick="window.location.href = '{{ url_for('createData') }}'" type="button" class="btn btn-primary">Create dataset</button>
 {% endblock %}

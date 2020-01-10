@@ -17,10 +17,10 @@ class Config(object):
     DROPZONE_ALLOWED_FILE_CUSTOM = True
     DROPZONE_ALLOWED_FILE_TYPE = 'image/*'
     DROPZONE_UPLOAD_MULTIPLE = True
-    DROPZONE_REDIRECT_VIEW = 'showData'
+    DROPZONE_REDIRECT_VIEW = 'showData'#'showData'
 
     # Uploads settings
-    UPLOADED_PHOTOS_DEST = os.getcwd() + '/Dataset_upload'
+    UPLOADED_PHOTOS_DEST = os.getcwd() + '/Data_upload2Blob/'
 
     #database
     params = urllib.parse.quote_plus(r'Driver={ODBC Driver 13 for SQL Server};Server=tcp:facerec.database.windows.net,1433;Database=FaceRec;Uid=projectIV@facerec;Pwd=Project4;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')

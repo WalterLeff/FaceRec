@@ -123,6 +123,49 @@ def dashboard():
 	return render_template('dashboard.html', title='Dashboard')
 
 ######################################################
+#azure blob storage:
+######################################################
+import os
+from azure.storage.blob import BlockBlobService
+
+@app.route('/blobStorage', methods=['GET', 'POST'])
+def uploadToBlob():
+	root_path = os.getcwd()
+	dir_name = 'Data_upload2Blob'
+	path = f"{root_path}/{dir_name}"
+	file_names = os.listdir(path)
+
+	account_key	 = 'Zc2lxyoAFOfCB4GMVRl7yqnHJ3QQGJohFXXI9NmVLGIJRWkzkgDgOxdnu7DnpXRNCnry3T0XFASLUQ9vLGDPWA=='
+	account_name = 'facerecblob'
+	container_name = 'woutercontainer'
+
+
+	block_blob_service = BlockBlobService(
+	account_name=account_name,
+	account_key=account_key
+	)
+	container_client = block_blob_service.create_container(container_name)
+
+	for file_name in file_names:
+		blob_name = f"{dir_name}/{file_name}"
+		file_path = f"{path}/{file_name}"
+		block_blob_service.create_blob_from_path(container_name, blob_name, file_path)
+	ref =  'http://'+ account_name + '.blob.core.windows.net/' + container_name + '/' + file_name
+	return ref
+######################################################
+#Machine learning:
+######################################################
+
+@app.route('/trainDataset')
+@login_required
+def trainData():
+	import os
+	#TODO : run encode_faces.py from AI/Models 
+	DataSetFolder = os.getcwd()+ '/Dataset_upload/'
+	return "encode_faces python script moet runnen"
+	#python encode_faces.py --dataset DataSetFolder --encodings encodings.pickle
+
+######################################################
 #API:  TODO: nice to have
 ######################################################
 
@@ -130,16 +173,3 @@ def dashboard():
 @login_required
 def api():
 	return render_template('api.html', title='API')
-
-
-######################################################
-#Machine learning:
-######################################################
-import os
-@app.route('/trainDataset')
-@login_required
-def trainData():
-	#TODO : run encode_faces.py from AI/Models 
-	DataSetFolder = os.getcwd()+ '/Dataset_upload/'
-	return "encode_faces python script moet runnen"
-	#python encode_faces.py --dataset DataSetFolder --encodings encodings.pickle

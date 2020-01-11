@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    <h2>this is the dashboard page</h2>
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h1>Hi, {{ current_user.username }}!</h1>
+            <h3>this is the dashboard page</h3>
+        </div>
+    </div>
+</div>
 {% endblock %}

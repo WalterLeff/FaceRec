@@ -97,7 +97,7 @@ def showData():
 	file_urls = session['file_urls']
 	session.pop('file_urls', None)
 	return render_template('createdata.html', file_urls=file_urls, form=form)
-
+	return 
 ######################################################
 #Pages:
 ######################################################
@@ -137,7 +137,7 @@ def uploadToBlob():
 
 	account_key	 = 'Zc2lxyoAFOfCB4GMVRl7yqnHJ3QQGJohFXXI9NmVLGIJRWkzkgDgOxdnu7DnpXRNCnry3T0XFASLUQ9vLGDPWA=='
 	account_name = 'facerecblob'
-	container_name = 'woutercontainer'
+	container_name = 'students'
 
 
 	block_blob_service = BlockBlobService(
@@ -147,11 +147,10 @@ def uploadToBlob():
 	container_client = block_blob_service.create_container(container_name)
 
 	for file_name in file_names:
-		blob_name = f"{dir_name}/{file_name}"
+		blob_name = f"{file_name}"
 		file_path = f"{path}/{file_name}"
 		block_blob_service.create_blob_from_path(container_name, blob_name, file_path)
-	ref =  'http://'+ account_name + '.blob.core.windows.net/' + container_name + '/' + file_name
-	return ref
+	return render_template('createdata.html')
 ######################################################
 #Machine learning:
 ######################################################
@@ -169,7 +168,7 @@ def trainData():
 #API:  TODO: nice to have
 ######################################################
 
-@app.route('/api')
-@login_required
-def api():
-	return render_template('api.html', title='API')
+# @app.route('/api')
+# @login_required
+# def api():
+# 	return render_template('api.html', title='API')

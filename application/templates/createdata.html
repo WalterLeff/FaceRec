@@ -2,39 +2,46 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
+<div class="container">
     <h1>Hi, {{ current_user.username }}!</h1>
     <h2>this is the create dataset page</h2>
+</div>
 
-
+<div class="container">
     <div class="row">
         <div class="col-md-4">
             {{ wtf.quick_form(form) }}
         </div>
-    </div>
-    <br>
-    <!-- <button onclick="window.location.href = '{{ url_for('dashboard') }}'" type="submit" class="btn btn-primary">Create</button> -->
-
-<h4>Please upload your files with firstname_lastname</h4>
-    {{ dropzone.load() }}
-    {{ dropzone.style('border: 2px dashed #0087F7;
-        margin: 10px;
-        min-height: 200px; 
-        max-width: 400px;
-        ') }}
-
-    {{ dropzone.create(action_view='createData') }}
-
-    <div class="row">
-        <div class="col-md-12">
-    {% for file_url in file_urls %}
-        <img style="height: 150px" src="{{ file_url }}">
-    {% endfor %}
+        <div class="col-md-4 align-self-end">
+            <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit"
+                class="btn btn-primary">Train data</button>
         </div>
     </div>
+</div>
 
 
-    <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit" class="btn btn-primary">Train</button>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h4>Please upload your files with firstname_lastname</h4>
+            {{ dropzone.load() }}
+            {{ dropzone.style('border: 2px dashed #0087F7;
+        margin: 10px;
+        <!-- min-height: 100px; 
+        max-width: 800px; -->
+        ') }}
+        </div>
+    </div>
+</div>
+{{ dropzone.create(action_view='createData') }}
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            {% for file_url in file_urls %}
+            <img style="height: 150px" src="{{ file_url }}">
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

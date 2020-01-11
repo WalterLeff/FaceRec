@@ -2,10 +2,18 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
-    <h2>this is the home page</h2>
-
-    <h2>Do you want to create a dataset ?</h2>
-    <h3>Let's create your dataset for training and recognising faces</h3>
-    <button onclick="window.location.href = '{{ url_for('createData') }}'" type="button" class="btn btn-primary">Create dataset</button>
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h1>Hi, {{ current_user.username }}!</h1>
+            <h3>this is the home page</h3>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Do you want to create a dataset ?</h2>
+        <h4>Let's create your dataset for training and recognising faces</h4>
+        <br>
+        <button onclick="window.location.href = '{{ url_for('createData') }}'" type="button" class="btn btn-primary">Create dataset</button>
+    <div class="col align-self-center">
+</div>
 {% endblock %}

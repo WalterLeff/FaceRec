@@ -36,4 +36,4 @@ class CreateNewSessionForm(FlaskForm):
 
 class CreateDataset(FlaskForm):
     Module = StringField('Module', validators=[DataRequired])
-    ClassName = StringField('Classname', validators=[DataRequired])
+    #ClassName = StringField('Classname', validators=[DataRequired])

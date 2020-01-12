@@ -37,6 +37,10 @@ class Config(object):
 	
 	#AZURE_STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=facerecblob;AccountKey=ro3K4T0Jhcd1cx7X3rrFCzRztDk8IEdCkrH3+lReOpX1mSFmDhuidH23lskLDMTwFpDJ1pGxZjWJqgt/KBx09Q==;EndpointSuffix=core.windows.net
 
+	#Azure Cognitive Servoces
+	FACE_SUBSCRIPTION_KEY='f07cad5607c04b01b2e0b38f0bbd3872'
+	FACE_ENDPOINT = 'https://facerec-face-api.cognitiveservices.azure.com/'
+
 	print('Azure sql databse connection is ok')
 	#print(engine_azure.table_names())
 

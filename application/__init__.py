@@ -36,9 +36,9 @@ if not app.debug:
 	app.logger.setLevel(logging.INFO)
 	app.logger.info('website startup')
 
-from application import routes, models, errors
+from application import routes, models, errors, forms
 
 if __name__ == '__main__':
 	# * --- DEBUG MODE: --- *
-	app.run(host='127.0.0.1', port=5000, debug=True)
+	app.run(host='0.0.0.0', port=5000, debug=True)
 	

@@ -81,8 +81,9 @@ def createData():
 			file_urls.append(photos.url(filename))
 			
 		session['file_urls'] = file_urls
-		#return "uploading..."
+		return "uploading..."
 		flash('Congratulations, photo''s are uploaded')
+		uploadToBlob()
 	# return dropzone template on GET request 
 	return render_template('createdata.html', title='Create datasets', form=form,)
 
@@ -152,7 +153,7 @@ def uploadToBlob():
 		blob_name = f"{file_name}"
 		file_path = f"{path}/{file_name}"
 		block_blob_service.create_blob_from_path(container_name, blob_name, file_path)
-	return render_template('createdata.html')
+	return 'uploaded to blob storage wouter'
 
 ######################################################
 #Machine learning:

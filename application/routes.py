@@ -9,8 +9,6 @@ from application.forms import LoginForm, RegistrationForm, CreateNewSessionForm,
 from flask_dropzone import Dropzone
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 
-
-
 ######################################################
 #Authentication:
 ######################################################
@@ -160,14 +158,18 @@ def uploadToBlob():
 #Machine learning:
 ######################################################
 from AI.encode_faces import encode_faces
-
+from flaskthreads import AppContextThread
 @app.route('/trainDataset')
 @login_required
 def trainData():
 	encode_faces()
-	return redirect('dashboard.html')
+	t = AppContextThread(target=showDashboard)
+	t.start()
+	t.join()
+	return 'ok'
 	
-
+def showDashboard():
+	return redirect('dashboard.html')
 ######################################################
 #swagger API documentatie:  TODO: nice to have
 ######################################################

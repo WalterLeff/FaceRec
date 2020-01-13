@@ -1,20 +1,15 @@
-# USAGE
-# python encode_faces.py --dataset dataset --encodings encodings.pickle
-
-# import the necessary packages
 from imutils import paths
 import face_recognition
 import argparse
 import pickle
 import cv2
 import os
-print("encode_faces.py started")
+
 def encode_faces():
+    print("encode_faces.py started")
     print("[INFO] quantifying faces...")
-    #path = "/Users/wouterlefebvre/Github Repo's/FaceRec/AI/Testdata/"
-    
-    imagePaths = list(paths.list_images('AI/Testdata')) #TODO use upload folder instead of testFolder !!!
-    #print(imagePaths)
+   
+    imagePaths = list(paths.list_images('AI/Testdata')) # AI/Testdata #TODO use upload folder instead of testFolder !!!
     # initialize the list of known encodings and known names
     knownEncodings = []
     knownNames = []

@@ -9,6 +9,7 @@ from logging.handlers import RotatingFileHandler
 from flask_bootstrap import Bootstrap
 from flask_dropzone import Dropzone
 from flask_azure_storage import FlaskAzureStorage
+from flask_script import Manager
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -19,6 +20,7 @@ login.login_view = 'login'
 bootstrap = Bootstrap(app)
 dropzone = Dropzone(app)
 azure_storage = FlaskAzureStorage(app)
+manager = Manager(app)
 
 if not app.debug:
 
@@ -39,3 +41,4 @@ from application import routes, models, errors
 if __name__ == '__main__':
 	# * --- DEBUG MODE: --- *
 	app.run(host='127.0.0.1', port=5000, debug=True)
+	

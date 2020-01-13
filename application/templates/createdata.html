@@ -13,8 +13,10 @@
             {{ wtf.quick_form(form) }}
         </div>
         <div class="col-md-4 align-self-end">
-            <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit"
+            <form method="POST"> <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit"
                 class="btn btn-primary">Train data</button>
+            </form>
+           
         </div>
     </div>
 </div>

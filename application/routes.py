@@ -83,7 +83,7 @@ def createData():
 		session['file_urls'] = file_urls
 		return "uploading..."
 		flash('Congratulations, photo''s are uploaded')
-		uploadToBlob()
+		uploadToBlob(file_urls)
 	# return dropzone template on GET request 
 	return render_template('createdata.html', title='Create datasets', form=form,)
 

@@ -1,8 +1,6 @@
 import os
 from os import environ
-#import pyodbc
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
+from flask_sqlalchemy import create_engine
 import urllib
 
 basedir = os.path.abspath(os.path.dirname(__file__))

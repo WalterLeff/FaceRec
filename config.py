@@ -1,6 +1,6 @@
 import os
 from os import environ
-from flask_sqlalchemy import create_engine
+#from flask_sqlalchemy import create_engine
 import urllib
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -28,7 +28,7 @@ class Config(object):
 	#azure sql database
 	params = urllib.parse.quote_plus(r'Driver={ODBC Driver 13 for SQL Server};Server=tcp:facerec.database.windows.net,1433;Database=FaceRec;Uid=projectIV@facerec;Pwd=Project4;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 	SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc:///?odbc_connect={}'.format(params)
-	engine_azure = create_engine(SQLALCHEMY_DATABASE_URI,echo=True)
+	#engine_azure = create_engine(SQLALCHEMY_DATABASE_URI,echo=True)
 
 	#azure blob storage
 	AZURE_STORAGE_ACCOUNT_NAME = 'facerecblob' 

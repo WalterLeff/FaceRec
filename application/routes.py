@@ -120,10 +120,24 @@ def home():
 def createSession():
 	return render_template('createsession.html', title= 'Create new session')
 
-@app.route('/dashboard')
+@app.route('/train')
 @login_required
-def dashboard():
-	return render_template('dashboard.html', title='Dashboard')
+def train():
+	return render_template('train.html', title='train')
+
+from AI.recognize_faces_video_file import recognize_faces_video_file
+@app.route('/output')
+def output():
+	
+	# distinct_list = []
+	# for n in name:
+	# 	if n not in distinct_list:
+	# 		distinct_list.append(n)
+	# print(distinct_list)
+	return render_template('output.html')
+@app.route('/recognize')
+def startRecognize():
+	recognize_faces_video_file()
 
 ######################################################
 #azure blob storage:
@@ -164,13 +178,19 @@ from flaskthreads import AppContextThread
 @login_required
 def trainData():
 	encode_faces()
-	t = AppContextThread(target=showDashboard)
-	t.start()
-	t.join()
-	return 'ok'
-	
-def showDashboard():
-	return redirect('dashboard.html')
+	return render_template('index.html')
+
+# from AI.recognize_faces_video_file import name
+# @app.route('/recognizeFaces')
+# def recognizeFaces():
+# 	distinct_list = []
+# 	for n in name:
+# 		if n not in distinct_list:
+# 			distinct_list.append(n)
+# 	print(distinct_list)
+# 	return render_template('dashboard.html', listNames = distinct_list)
+		
+
 ######################################################
 #swagger API documentatie:  TODO: nice to have
 ######################################################

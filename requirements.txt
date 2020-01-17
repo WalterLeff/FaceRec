@@ -8,7 +8,6 @@ azure-common==1.1.24
 azure-core==1.1.1
 azure-mgmt-storage==7.1.0
 azure-nspkg==3.0.2
-azure-storage==0.36.0
 azure-storage-common==0.37.1
 azure-storage-nspkg==3.1.0
 black==19.10b0
@@ -45,7 +44,6 @@ itsdangerous==1.1.0
 Jinja2==2.10.3
 Mako==1.1.0
 MarkupSafe==1.1.1
-migrate==0.3.8
 msrest==0.6.10
 msrestazure==0.6.2
 numpy==1.18.0

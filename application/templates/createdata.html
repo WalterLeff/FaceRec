@@ -10,13 +10,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            {{ wtf.quick_form(form) }}
-        </div>
-        <div class="col-md-4 align-self-end">
-            <form method="POST"> <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit"
-                class="btn btn-primary">Train data</button>
+            <form action="/action_page.php">
+                <p>Please select your gender:</p>
+                  <input type="radio" name="datatset" value="upload_data"> upload data<br>
+                  <input type="radio" name="video" value="upload_video"> upload video<br>
             </form>
-           
+            <!-- {{ wtf.quick_form(form) }} -->
+        </div>
+        
         </div>
     </div>
 </div>

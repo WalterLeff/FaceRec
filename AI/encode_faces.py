@@ -9,7 +9,7 @@ def encode_faces():
     print("encode_faces.py started")
     print("[INFO] quantifying faces...")
    
-    imagePaths = list(paths.list_images('AI/Testdata')) # AI/Testdata #TODO use upload folder instead of testFolder !!!
+    imagePaths = list(paths.list_images('AI/Testdata')) # Data_upload2Blob #TODO use upload folder instead of testFolder !!!
     # initialize the list of known encodings and known names
     knownEncodings = []
     knownNames = []
@@ -43,7 +43,7 @@ def encode_faces():
     # dump the facial encodings + names to disk
     print("[INFO] serializing encodings...")
     data = {"encodings": knownEncodings, "names": knownNames}
-    f = open("encodings.pickle","wb")
+    f = open("AI/encodings.pickle","wb")
     #f = open(args["encodings"], "wb")
     f.write(pickle.dumps(data))
     f.close()

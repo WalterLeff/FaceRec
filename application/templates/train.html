@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h1>Hi, {{ current_user.username }}!</h1>
+            <h3>this is the output page</h3>
+        </div>
+
+        <div class="col-md-4 align-self-end">
+            <button onclick="window.location.href = '{{ url_for('trainData') }}'" type="submit"
+                class="btn btn-primary">Train data</button>
+                
+          
+            <!-- <form method="POST"> <button onclick="window.location.href = '{{ url_for('uploadToBlob') }}'" type="submit"
+                class="btn btn-primary">upload to Blob storage</button>
+           </form> -->
+
+
+    </div>
+</div>
+{% endblock %}

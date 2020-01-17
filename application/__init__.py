@@ -8,7 +8,8 @@ from flask_login import LoginManager
 from logging.handlers import RotatingFileHandler
 from flask_bootstrap import Bootstrap
 from flask_dropzone import Dropzone
-from flask_azure_storage import FlaskAzureStorage
+#from flask_azure_storage import FlaskAzureStorage
+from azure import storage
 from flask_script import Manager
 
 app = Flask(__name__)
@@ -19,7 +20,7 @@ login = LoginManager(app)
 login.login_view = 'login'
 bootstrap = Bootstrap(app)
 dropzone = Dropzone(app)
-azure_storage = FlaskAzureStorage(app)
+#azure_storage = FlaskAzureStorage(app)
 manager = Manager(app)
 
 if not app.debug:

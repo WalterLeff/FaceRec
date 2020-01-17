@@ -173,7 +173,6 @@ def uploadToBlob():
 #Machine learning:
 ######################################################
 from AI.encode_faces import encode_faces
-from flaskthreads import AppContextThread
 @app.route('/trainDataset')
 @login_required
 def trainData():

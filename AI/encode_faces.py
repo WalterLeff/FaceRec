@@ -23,7 +23,7 @@ def encode_faces():
 
         # load the input image and convert it from RGB (OpenCV ordering)
         # to dlib ordering (RGB)
-        image = cv2.imread(imagePath)
+        image = cv2.imread(imagePath) 
         rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
         # detect the (x, y)-coordinates of the bounding boxes
@@ -48,3 +48,4 @@ def encode_faces():
     f.write(pickle.dumps(data))
     f.close()
 
+#encode_faces()

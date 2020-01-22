@@ -13,7 +13,7 @@ import cv2
 
 
 def recognize_faces_video_file():
-
+    from datetime import datetime
     now = datetime. now()
     current_time = now. strftime("%H:%M:%S")
 
@@ -25,7 +25,7 @@ def recognize_faces_video_file():
     # initialize the pointer to the video file and the video writer
     print(current_time + "[INFO] processing video...")
 
-    inputFile = 'AI/videos/Test2.mp4'
+    inputFile = 'AI/videos/MVI_6919.MOV'
     stream = cv2.VideoCapture(inputFile)
     writer = None
     print(current_time + "[INFO] stream opened ... ")
@@ -54,6 +54,7 @@ def recognize_faces_video_file():
 
         # loop over the facial embeddings
         for encoding in encodings:
+            
             # attempt to match each face in the input image to our known
             # encodings
             matches = face_recognition.compare_faces(data["encodings"], encoding)
@@ -66,7 +67,7 @@ def recognize_faces_video_file():
                 # was matched
                 matchedIdxs = [i for (i, b) in enumerate(matches) if b]
                 counts = {}
-
+                
                 # loop over the matched indexes and maintain a count for
                 # each recognized face face
                 for i in matchedIdxs:
@@ -80,7 +81,11 @@ def recognize_faces_video_file():
 
             # update the list of names
             names.append(name)
-
+            from datetime import datetime
+            with open('DetectedFaces.txt', 'a+') as f:
+                    for name in names:
+                        f.write(name)
+                        #f.write('Detected Name :  %s. Detected at: %s \n' % (name, datetime.now()) )
         # loop over the recognized faces
         for ((top, right, bottom, left), name) in zip(boxes, names):
             # rescale the face coordinates
@@ -96,8 +101,10 @@ def recognize_faces_video_file():
                 frame, name, (left, y), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 255, 0), 2
             )
             print(name)
+            
 
-        output = 'AI/output/test.avi'
+
+        output = 'AI/output/MVI_6919.avi'
         # if the video writer is None *AND* we are supposed to write
         # the output video to disk initialize the writer
         if writer is None and output is not None:
@@ -128,4 +135,3 @@ def recognize_faces_video_file():
     if writer is not None:
         writer.release()
     print(current_time + "[INFO] ready...")
-#recognize_faces_video_file()

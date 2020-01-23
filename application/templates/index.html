@@ -7,16 +7,20 @@
     <div class="row">
         <div class="col align-self-center">
     <h1>Hi, {{ current_user.username }}!</h1>
-    <h2>this is the FaceRec App page</h2>
+    <h2>Welcome on my FaceRec application</h2>
         </div>
     </div>
     <div class="row">
-        <p>Hier kan je info vinden over deze app zonder te moeten ingelogd zijn.</p>
-
-        Wouter Lefebvre Howest  
+        <br>
+        <br>
+        <p>This is a NMCT project by Wouter Lefebvre for HoWest Kortrijk</p>
     <div class="col align-self-center">
+
+        <div class="row">
+            
+            <h4>Let's start by creating your dataset for training and recognising faces</h4>
+            <br>
+            <button onclick="window.location.href = '{{ url_for('createData') }}'" type="button" class="btn btn-primary">Create dataset</button>
+        
 </div>
-
-
-    
 {% endblock %}

@@ -3,15 +3,25 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col align-self-center">
-            <h1>Hi, {{ current_user.username }}!</h1>
-            <h3>this is the output page</h3>
+        <div class="col-sm">
+            
+            <h3>Please press this button for recognizing faces</h3>
         </div>
 
-        <div class="col-md-4 align-self-end">
+        <div class="col">
             <button onclick="window.location.href = '{{ url_for('startRecognize') }}'" type="submit"
                 class="btn btn-primary">start recognizing data
             </button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <p><h4>Recognised students</h4></p>
+        <div class="col-sm">
+            {%for line in distinct_lines %} 
+            <li>{{ line }}</li>  
+        {%endfor%} 
         </div>
     </div>
 </div>

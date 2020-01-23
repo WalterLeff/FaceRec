@@ -127,14 +127,14 @@ def train():
 
 from AI.recognize_faces_video_file import recognize_faces_video_file
 @app.route('/output')
+@login_required
 def output():
+	with open('DetectedFaces.txt') as f:
+		lines = f.readlines()
+		distinct_lines = set(lines)
+		
 	
-	# distinct_list = []
-	# for n in name:
-	# 	if n not in distinct_list:
-	# 		distinct_list.append(n)
-	# print(distinct_list)
-	return render_template('output.html')
+	return render_template('output.html', distinct_lines=distinct_lines)
 @app.route('/recognize')
 def startRecognize():
 	recognize_faces_video_file()
@@ -178,23 +178,3 @@ from AI.encode_faces import encode_faces
 def trainData():
 	encode_faces()
 	return render_template('index.html')
-
-# from AI.recognize_faces_video_file import name
-# @app.route('/recognizeFaces')
-# def recognizeFaces():
-# 	distinct_list = []
-# 	for n in name:
-# 		if n not in distinct_list:
-# 			distinct_list.append(n)
-# 	print(distinct_list)
-# 	return render_template('dashboard.html', listNames = distinct_list)
-		
-
-######################################################
-#swagger API documentatie:  TODO: nice to have
-######################################################
-
-# @app.route('/api')
-# @login_required
-# def api():
-# 	return render_template('api.html', title='API')

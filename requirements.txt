@@ -110,7 +110,7 @@ msrest==0.6.10
 msrestazure==0.6.2
 numpy==1.18.1
 oauthlib==3.1.0
-opencv-contrib-python==4.1.2.30
+opencv-contrib-python==4.2.0.32
 Pillow==7.0.0
 pycparser==2.19
 PyJWT==1.7.1

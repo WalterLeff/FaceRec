@@ -104,7 +104,7 @@ imutils==0.5.3
 isodate==0.6.0
 itsdangerous==1.1.0
 Jinja2==2.10.3
-Mako==1.1.0
+Mako==1.2.2
 MarkupSafe==1.1.1
 msrest==0.6.10
 msrestazure==0.6.2
